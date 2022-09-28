@@ -1,6 +1,6 @@
 # fastcopy-bean属性快速复制
 
-github地址：https://github.com/zwk0508/fastcopy.git
+github地址：[https://github.com/zwk0508/fastcopy.git](https://github.com/zwk0508/fastcopy.git)
 
 ### 原理
 
@@ -13,10 +13,11 @@ public final class Generator$1$Copier implements Copier {
 
     @Override
     public void copy(Object var1, Object var2) {
-        User u1 = (User)var1;
-        User u2 = (User)var2;
+        User u1 = (User) var1;
+        User u2 = (User) var2;
         u2.setUserId(u2.getUserId());
     }
+}
 ```
 
 ### 速度
@@ -25,7 +26,7 @@ public final class Generator$1$Copier implements Copier {
 2. 比spring的BeanCopier快一点，初始化快了大约3倍
 3. apache的就不比了
 
-测试代码
+测试代码，dto的代码复制一份
 ```java
 @Data
 public class Attachment {
@@ -148,6 +149,7 @@ public void test() throws Exception {
 }
 ```
 
+统计耗时，单位是纳秒
 第一行是初始化耗时
 
 |  fastcopy   | BeanCopier  | BeanUtils|
